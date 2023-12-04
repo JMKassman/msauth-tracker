@@ -7,7 +7,7 @@ const connect = mongoose.connect(url, {
 
 connect.then(db => {
     console.log("connected to db")
-    process.send("ready") // tell pm2 we are good to go
+    if (process.send) process.send("ready") // tell pm2 we are good to go
 }).catch(err => {
     console.log(err)
     process.exit(1)
