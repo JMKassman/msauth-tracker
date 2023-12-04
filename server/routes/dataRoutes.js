@@ -6,20 +6,20 @@ const jwt = require("jsonwebtoken")
 
 const { verifyUser } = require("../authenticate")
 
-router.get("/refills", verifyUser, (req, res, next) => {
+router.get("/tokens", verifyUser, (req, res, next) => {
     User.findById(req.user._id).then(
         user => {
-            res.send(user.refills)
+            res.send(user.tokens)
         },
         err => next(err)
     )
 })
 
-router.post("/newRefill", verifyUser, (req, res, next) => {
-    const newRefill = req.body
+router.post("/newToken", verifyUser, (req, res, next) => {
+    const newToken = req.body
     User.findById(req.user._id).then(
         user => {
-            user.refills.push(newRefill)
+            user.tokens.push(newToken)
             user.save().then(user => { res.send({ success: true }) }).catch(err => { res.status(500).send(err) })
         },
         err => next(err)

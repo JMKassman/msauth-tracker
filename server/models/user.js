@@ -10,25 +10,10 @@ const Session = new Schema({
     }
 })
 
-const Refill = new Schema({
-    gallons: {
+const Token = new Schema({
+    number: {
         type: Number,
-        min: 0,
         required: true,
-    },
-    total_price: {
-        type: Number,
-        min: 0,
-        required: true,
-    },
-    miles: {
-        type: Number,
-        min: 0,
-        required: true,
-    },
-    time: {
-        type: Date, 
-        default: Date.now,
     },
 })
 
@@ -44,14 +29,14 @@ const User = new Schema({
     refreshToken: {
         type: [Session]
     },
-    refills: {
-        type: [Refill]
+    tokens: {
+        type: [Token]
     },
 })
 
 //remove refresh token from response
 User.set("toJSON", {
-    transform: function(doc, ret, options) {
+    transform: function (doc, ret, options) {
         delete ret.refreshToken
         return ret
     },
