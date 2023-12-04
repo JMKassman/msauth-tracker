@@ -15,6 +15,30 @@ router.get("/tfaCodes", verifyUser, (req, res, next) => {
     )
 })
 
+router.get("/allTfaCodes", verifyUser, (req, res, next) => {
+    User.aggregate([
+        {
+            '$unwind': {
+                'path': '$TfaCodes'
+            }
+        }, {
+            '$addFields': {
+                'code': '$TfaCodes.code'
+            }
+        }, {
+            '$group': {
+                '_id': null,
+                'codes': {
+                    '$push': '$code'
+                }
+            }
+        }
+    ]).then(doc => {
+        res.send(doc)
+    },
+        err => next(err))
+})
+
 router.post("/newTfaCode", verifyUser, (req, res, next) => {
     const newTfaCode = req.body
     User.findById(req.user._id).then(

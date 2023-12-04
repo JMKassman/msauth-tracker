@@ -14,6 +14,7 @@ import Graph from "./Graph";
 function PostAuth() {
     const [userContext, setUserContext] = useContext(UserContext)
     const [key, setKey] = useState("newTfaCode")
+    const [allData, setAllData] = useState([])
 
     const fetchUserDetails = useCallback(() => {
         fetch(process.env.REACT_APP_API_ENDPOINT + "users/me", {
@@ -64,6 +65,28 @@ function PostAuth() {
         })
     }
 
+    const fetchAllData = () => {
+        fetch(process.env.REACT_APP_API_ENDPOINT + "data/allTfaCodes", {
+            method: "GET",
+            credentials: "include",
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": `Bearer ${userContext.token}`,
+            },
+        }).then(async res => {
+            if (res.ok) {
+                const data = await res.json()
+                setAllData(data)
+            } else if (res.status === 401) {
+                window.location.reload()
+            } else {
+                setAllData([])
+            }
+        })
+    }
+
+    useEffect(fetchAllData, [])
+
     if (userContext.userDetails === null) {
         return <Alert variant="danger">Failed to load. Try again later</Alert>
     } else if (!userContext.userDetails) {
@@ -83,7 +106,7 @@ function PostAuth() {
                         <DataTable data={userContext.userDetails.TfaCodes} refreshHandler={refreshHandler} />
                     </Tab>
                     <Tab eventKey="graph" title="Graph Data">
-                        <Graph data={userContext.userDetails.TfaCodes} />
+                        <Graph data={userContext.userDetails.TfaCodes} allData={allData} />
                     </Tab>
                 </Tabs>
             </div>
