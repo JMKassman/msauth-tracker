@@ -12,14 +12,14 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
     ],\
     "dependencyTreeRoots": [\
       {\
-        "name": "gas-tracker-server",\
+        "name": "msauth-tracker-server",\
         "reference": "workspace:."\
       }\
     ],\
     "enableTopLevelFallback": true,\
     "ignorePatternData": "(^(?:\\\\.yarn\\\\/sdks(?:\\\\/(?!\\\\.{1,2}(?:\\\\/|$))(?:(?:(?!(?:^|\\\\/)\\\\.{1,2}(?:\\\\/|$)).)*?)|$))$)",\
     "fallbackExclusionList": [\
-      ["gas-tracker-server", ["workspace:."]]\
+      ["msauth-tracker-server", ["workspace:."]]\
     ],\
     "fallbackPool": [\
     ],\
@@ -453,26 +453,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
-      ["gas-tracker-server", [\
-        ["workspace:.", {\
-          "packageLocation": "./",\
-          "packageDependencies": [\
-            ["gas-tracker-server", "workspace:."],\
-            ["body-parser", "npm:1.20.2"],\
-            ["cookie-parser", "npm:1.4.6"],\
-            ["cors", "npm:2.8.5"],\
-            ["dotenv", "npm:16.3.1"],\
-            ["express", "npm:4.18.2"],\
-            ["jsonwebtoken", "npm:9.0.2"],\
-            ["mongoose", "npm:7.6.3"],\
-            ["passport", "npm:0.6.0"],\
-            ["passport-jwt", "npm:4.0.1"],\
-            ["passport-local", "npm:1.0.0"],\
-            ["passport-local-mongoose", "npm:8.0.0"]\
-          ],\
-          "linkType": "SOFT"\
-        }]\
-      ]],\
       ["generaterr", [\
         ["npm:1.5.0", {\
           "packageLocation": "./.yarn/cache/generaterr-npm-1.5.0-170a74dd6c-a435172f16.zip/node_modules/generaterr/",\
@@ -881,6 +861,26 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["ms", "npm:2.1.3"]\
           ],\
           "linkType": "HARD"\
+        }]\
+      ]],\
+      ["msauth-tracker-server", [\
+        ["workspace:.", {\
+          "packageLocation": "./",\
+          "packageDependencies": [\
+            ["msauth-tracker-server", "workspace:."],\
+            ["body-parser", "npm:1.20.2"],\
+            ["cookie-parser", "npm:1.4.6"],\
+            ["cors", "npm:2.8.5"],\
+            ["dotenv", "npm:16.3.1"],\
+            ["express", "npm:4.18.2"],\
+            ["jsonwebtoken", "npm:9.0.2"],\
+            ["mongoose", "npm:7.6.3"],\
+            ["passport", "npm:0.6.0"],\
+            ["passport-jwt", "npm:4.0.1"],\
+            ["passport-local", "npm:1.0.0"],\
+            ["passport-local-mongoose", "npm:8.0.0"]\
+          ],\
+          "linkType": "SOFT"\
         }]\
       ]],\
       ["negotiator", [\

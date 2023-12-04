@@ -344,24 +344,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"gas-tracker-server@workspace:.":
-  version: 0.0.0-use.local
-  resolution: "gas-tracker-server@workspace:."
-  dependencies:
-    body-parser: ^1.20.2
-    cookie-parser: ^1.4.6
-    cors: ^2.8.5
-    dotenv: ^16.3.1
-    express: ^4.18.2
-    jsonwebtoken: ^9.0.2
-    mongoose: ^7.6.3
-    passport: ^0.6.0
-    passport-jwt: ^4.0.1
-    passport-local: ^1.0.0
-    passport-local-mongoose: ^8.0.0
-  languageName: unknown
-  linkType: soft
-
 "generaterr@npm:^1.5.0":
   version: 1.5.0
   resolution: "generaterr@npm:1.5.0"
@@ -708,6 +690,24 @@ __metadata:
   checksum: aa92de608021b242401676e35cfa5aa42dd70cbdc082b916da7fb925c542173e36bce97ea3e804923fe92c0ad991434e4a38327e15a1b5b5f945d66df615ae6d
   languageName: node
   linkType: hard
+
+"msauth-tracker-server@workspace:.":
+  version: 0.0.0-use.local
+  resolution: "msauth-tracker-server@workspace:."
+  dependencies:
+    body-parser: ^1.20.2
+    cookie-parser: ^1.4.6
+    cors: ^2.8.5
+    dotenv: ^16.3.1
+    express: ^4.18.2
+    jsonwebtoken: ^9.0.2
+    mongoose: ^7.6.3
+    passport: ^0.6.0
+    passport-jwt: ^4.0.1
+    passport-local: ^1.0.0
+    passport-local-mongoose: ^8.0.0
+  languageName: unknown
+  linkType: soft
 
 "negotiator@npm:0.6.3":
   version: 0.6.3
