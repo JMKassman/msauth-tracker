@@ -34,7 +34,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["dotenv", "npm:16.3.1"],\
             ["express", "npm:4.18.2"],\
             ["jsonwebtoken", "npm:9.0.2"],\
-            ["mongoose", "npm:7.6.3"],\
+            ["mongoose", "npm:7.6.6"],\
             ["passport", "npm:0.6.0"],\
             ["passport-jwt", "npm:4.0.1"],\
             ["passport-local", "npm:1.0.0"],\
@@ -753,17 +753,17 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["mongodb", [\
-        ["npm:5.9.0", {\
-          "packageLocation": "./.yarn/cache/mongodb-npm-5.9.0-e0f7c8bf46-5fb828d650.zip/node_modules/mongodb/",\
+        ["npm:5.9.1", {\
+          "packageLocation": "./.yarn/cache/mongodb-npm-5.9.1-7e427c6de3-a827937120.zip/node_modules/mongodb/",\
           "packageDependencies": [\
-            ["mongodb", "npm:5.9.0"]\
+            ["mongodb", "npm:5.9.1"]\
           ],\
           "linkType": "SOFT"\
         }],\
-        ["virtual:a9c403c4b847aad5019967e82cc2fb3d37b240c38efd9ec8bea87cf880a2a4f98c53c8322c346a214ab4b8cdb89640a4f6d79dfb6d96e4beeedb1c0fa18ab3b4#npm:5.9.0", {\
-          "packageLocation": "./.yarn/__virtual__/mongodb-virtual-37789f08c8/0/cache/mongodb-npm-5.9.0-e0f7c8bf46-5fb828d650.zip/node_modules/mongodb/",\
+        ["virtual:80f857e66547154027c401f1d8861be3f061c7bf55ba7520e426ed14eb83a3951ad029b32f92717b97413559a7f55525af4b4cc9604ab1e3afca0c77b1c72792#npm:5.9.1", {\
+          "packageLocation": "./.yarn/__virtual__/mongodb-virtual-22677a7fcc/0/cache/mongodb-npm-5.9.1-7e427c6de3-a827937120.zip/node_modules/mongodb/",\
           "packageDependencies": [\
-            ["mongodb", "virtual:a9c403c4b847aad5019967e82cc2fb3d37b240c38efd9ec8bea87cf880a2a4f98c53c8322c346a214ab4b8cdb89640a4f6d79dfb6d96e4beeedb1c0fa18ab3b4#npm:5.9.0"],\
+            ["mongodb", "virtual:80f857e66547154027c401f1d8861be3f061c7bf55ba7520e426ed14eb83a3951ad029b32f92717b97413559a7f55525af4b4cc9604ab1e3afca0c77b1c72792#npm:5.9.1"],\
             ["@aws-sdk/credential-providers", null],\
             ["@mongodb-js/saslprep", "npm:1.1.0"],\
             ["@mongodb-js/zstd", null],\
@@ -806,13 +806,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["mongoose", [\
-        ["npm:7.6.3", {\
-          "packageLocation": "./.yarn/cache/mongoose-npm-7.6.3-a9c403c4b8-16d097d6a4.zip/node_modules/mongoose/",\
+        ["npm:7.6.6", {\
+          "packageLocation": "./.yarn/cache/mongoose-npm-7.6.6-80f857e665-db8271fdb3.zip/node_modules/mongoose/",\
           "packageDependencies": [\
-            ["mongoose", "npm:7.6.3"],\
+            ["mongoose", "npm:7.6.6"],\
             ["bson", "npm:5.5.0"],\
             ["kareem", "npm:2.5.1"],\
-            ["mongodb", "virtual:a9c403c4b847aad5019967e82cc2fb3d37b240c38efd9ec8bea87cf880a2a4f98c53c8322c346a214ab4b8cdb89640a4f6d79dfb6d96e4beeedb1c0fa18ab3b4#npm:5.9.0"],\
+            ["mongodb", "virtual:80f857e66547154027c401f1d8861be3f061c7bf55ba7520e426ed14eb83a3951ad029b32f92717b97413559a7f55525af4b4cc9604ab1e3afca0c77b1c72792#npm:5.9.1"],\
             ["mpath", "npm:0.9.0"],\
             ["mquery", "npm:5.0.0"],\
             ["ms", "npm:2.1.3"],\
@@ -874,7 +874,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["dotenv", "npm:16.3.1"],\
             ["express", "npm:4.18.2"],\
             ["jsonwebtoken", "npm:9.0.2"],\
-            ["mongoose", "npm:7.6.3"],\
+            ["mongoose", "npm:7.6.6"],\
             ["passport", "npm:0.6.0"],\
             ["passport-jwt", "npm:4.0.1"],\
             ["passport-local", "npm:1.0.0"],\
