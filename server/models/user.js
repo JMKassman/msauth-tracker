@@ -10,8 +10,8 @@ const Session = new Schema({
     }
 })
 
-const Token = new Schema({
-    number: {
+const TfaCode = new Schema({
+    code: {
         type: Number,
         required: true,
     },
@@ -29,8 +29,8 @@ const User = new Schema({
     refreshToken: {
         type: [Session]
     },
-    tokens: {
-        type: [Token]
+    TfaCodes: {
+        type: [TfaCode]
     },
 })
 

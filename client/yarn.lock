@@ -6417,29 +6417,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"gas-tracker-client@workspace:.":
-  version: 0.0.0-use.local
-  resolution: "gas-tracker-client@workspace:."
-  dependencies:
-    "@testing-library/jest-dom": ^6.1.4
-    "@testing-library/react": ^14.0.0
-    "@testing-library/user-event": ^14.5.1
-    bootstrap: ^5.3.2
-    plotly.js-finance-dist: ^2.26.2
-    react: ^18.2.0
-    react-bootstrap: ^2.9.0
-    react-dom: ^18.2.0
-    react-plotly.js: ^2.6.0
-    react-scripts: 5.0.1
-    web-vitals: ^3.5.0
-    workbox-core: ^6.6.0
-    workbox-expiration: ^6.6.0
-    workbox-precaching: ^6.6.0
-    workbox-routing: ^6.6.0
-    workbox-strategies: ^6.6.0
-  languageName: unknown
-  linkType: soft
-
 "gauge@npm:^4.0.3":
   version: 4.0.4
   resolution: "gauge@npm:4.0.4"
@@ -8867,6 +8844,29 @@ __metadata:
   checksum: aa92de608021b242401676e35cfa5aa42dd70cbdc082b916da7fb925c542173e36bce97ea3e804923fe92c0ad991434e4a38327e15a1b5b5f945d66df615ae6d
   languageName: node
   linkType: hard
+
+"msauth-tracker-client@workspace:.":
+  version: 0.0.0-use.local
+  resolution: "msauth-tracker-client@workspace:."
+  dependencies:
+    "@testing-library/jest-dom": ^6.1.4
+    "@testing-library/react": ^14.0.0
+    "@testing-library/user-event": ^14.5.1
+    bootstrap: ^5.3.2
+    plotly.js-finance-dist: ^2.26.2
+    react: ^18.2.0
+    react-bootstrap: ^2.9.0
+    react-dom: ^18.2.0
+    react-plotly.js: ^2.6.0
+    react-scripts: 5.0.1
+    web-vitals: ^3.5.0
+    workbox-core: ^6.6.0
+    workbox-expiration: ^6.6.0
+    workbox-precaching: ^6.6.0
+    workbox-routing: ^6.6.0
+    workbox-strategies: ^6.6.0
+  languageName: unknown
+  linkType: soft
 
 "multicast-dns@npm:^7.2.5":
   version: 7.2.5

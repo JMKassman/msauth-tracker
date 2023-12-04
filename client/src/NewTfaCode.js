@@ -6,14 +6,12 @@ import React, { useContext, useState } from "react"
 
 import { UserContext } from './context/UserContext'
 
-function NewRefill(props) {
-    const [price, setPrice] = useState("")
-    const [gallons, setGallons] = useState("")
-    const [miles, setMiles] = useState("")
+function NewTfaCode(props) {
+    const [tfaCode, setTfaCode] = useState("")
     const [isSubmitting, setIsSubmitting] = useState(false)
     const [validated, setValidated] = useState(false)
     const [error, setError] = useState("")
-    const [userContext, ] = useContext(UserContext)
+    const [userContext,] = useContext(UserContext)
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -28,14 +26,14 @@ function NewRefill(props) {
 
         const genericErrorMessage = "Something went wrong! Please try again later."
 
-        fetch(process.env.REACT_APP_API_ENDPOINT + "data/newRefill", {
+        fetch(process.env.REACT_APP_API_ENDPOINT + "data/newTfaCode", {
             method: "POST",
             credentials: "include",
             headers: {
                 "Content-Type": "application/json",
                 "Authorization": `Bearer ${userContext.token}`,
             },
-            body: JSON.stringify({total_price: price, gallons: gallons, miles: miles}),
+            body: JSON.stringify({ code: tfaCode }),
         }).then(async res => {
             setIsSubmitting(false)
             switch (res.status) {
@@ -51,39 +49,24 @@ function NewRefill(props) {
                     break;
             }
         })
-        .catch(error => {
-            setIsSubmitting(false)
-            setError(genericErrorMessage)
-        })
+            .catch(error => {
+                setIsSubmitting(false)
+                setError(genericErrorMessage)
+            })
     }
 
     return (
         <>
             {error && <Alert variant='danger'>{error}</Alert>}
             <Form noValidate validated={validated} onSubmit={handleSubmit}>
-                <Form.Group className="mb-3" controlId="newRefillPrice">
-                    <Form.Label>Total Price</Form.Label>
+                <Form.Group className="mb-3" controlId="newTfaCode">
+                    <Form.Label>Authenticator Code</Form.Label>
                     <InputGroup>
-                        <InputGroup.Text>$</InputGroup.Text>
-                        <Form.Control required type="number" step="0.01" placeholder="Price" onChange={e => setPrice(e.target.value)} value={price} />
+                        <Form.Control required type="number" step="1" placeholder="Code" onChange={e => setTfaCode(e.target.value)} value={tfaCode} />
                         <Form.Control.Feedback type="invalid">
-                            Please enter the total price of the fillup.
+                            Please enter the MS Authenticator number.
                         </Form.Control.Feedback>
                     </InputGroup>
-                </Form.Group>
-                <Form.Group className="mb-3" controlId="newRefillGallons">
-                    <Form.Label>Gallons</Form.Label>
-                    <Form.Control required type="number" step="0.001" placeholder="Gallons" onChange={e => setGallons(e.target.value)} value={gallons} />
-                    <Form.Control.Feedback type="invalid">
-                        Please enter the total gallons purchased.
-                    </Form.Control.Feedback>
-                </Form.Group>
-                <Form.Group className="mb-3" controlId="newRefillMiles">
-                    <Form.Label>Miles</Form.Label>
-                    <Form.Control required type="number" step="0.1" placeholder="Miles" onChange={e => setMiles(e.target.value)} value={miles} />
-                    <Form.Control.Feedback type="invalid">
-                        Please enter the number of miles driven.
-                    </Form.Control.Feedback>
                 </Form.Group>
                 <Button variant="primary" type="submit" disabled={isSubmitting}>
                     {`${isSubmitting ? "Submitting" : "Submit"}`}
@@ -93,4 +76,4 @@ function NewRefill(props) {
     )
 }
 
-export default NewRefill
+export default NewTfaCode

@@ -1,5 +1,5 @@
 {
-  "name": "gas-tracker-client",
+  "name": "msauth-tracker-client",
   "packageManager": "yarn@3.5.1",
   "version": "0.1.0",
   "private": true,

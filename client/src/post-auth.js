@@ -7,13 +7,13 @@ import Tab from 'react-bootstrap/Tab';
 import { UserContext } from "./context/UserContext"
 
 import Loader from "./loader"
-import NewRefill from "./NewRefill"
+import NewTfaCode from "./NewTfaCode"
 import DataTable from "./DataTable"
 import Graph from "./Graph";
 
 function PostAuth() {
     const [userContext, setUserContext] = useContext(UserContext)
-    const [key, setKey] = useState("newRefill")
+    const [key, setKey] = useState("newTfaCode")
 
     const fetchUserDetails = useCallback(() => {
         fetch(process.env.REACT_APP_API_ENDPOINT + "users/me", {
@@ -27,13 +27,13 @@ function PostAuth() {
             if (res.ok) {
                 const data = await res.json()
                 setUserContext(oldValues => {
-                    return {...oldValues, userDetails: data}
+                    return { ...oldValues, userDetails: data }
                 })
             } else if (res.status === 401) {
                 window.location.reload()
             } else {
                 setUserContext(oldValues => {
-                    return {...oldValues, userDetails: null}
+                    return { ...oldValues, userDetails: null }
                 })
             }
         })
@@ -45,7 +45,7 @@ function PostAuth() {
 
     const refreshHandler = () => {
         setUserContext(oldValues => {
-            return {...oldValues, userDetails: undefined}
+            return { ...oldValues, userDetails: undefined }
         })
     }
 
@@ -58,7 +58,7 @@ function PostAuth() {
             },
         }).then(async res => {
             setUserContext(oldValues => {
-                return {...oldValues, userDetails: undefined, token: null}
+                return { ...oldValues, userDetails: undefined, token: null }
             })
             window.localStorage.setItem("logout", Date.now())
         })
@@ -76,14 +76,14 @@ function PostAuth() {
                     <Button variant="primary" onClick={logoutHandler}>Logout</Button>
                 </div>
                 <Tabs activeKey={key} onSelect={(k) => setKey(k)} id="post-auth-tabs" className="my-3">
-                    <Tab eventKey="newRefill" title="New Refill">
-                        <NewRefill refreshHandler={refreshHandler} setKey={setKey} />
+                    <Tab eventKey="newTfaCode" title="New Code">
+                        <NewTfaCode refreshHandler={refreshHandler} setKey={setKey} />
                     </Tab>
                     <Tab eventKey="dataTable" title="View Data">
-                        <DataTable data={userContext.userDetails.refills} refreshHandler={refreshHandler}/>
+                        <DataTable data={userContext.userDetails.TfaCodes} refreshHandler={refreshHandler} />
                     </Tab>
                     <Tab eventKey="graph" title="Graph Data">
-                        <Graph data={userContext.userDetails.refills}/>
+                        <Graph data={userContext.userDetails.TfaCodes} />
                     </Tab>
                 </Tabs>
             </div>
